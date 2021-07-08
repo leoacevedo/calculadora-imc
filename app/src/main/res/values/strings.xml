@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="etiqueta_altura">Altura (cm)</string>
+    <string name="etiqueta_peso">Peso (kg)</string>
+    <string name="etiqueta_masa_corporal">Tu índice de masa corporal es</string>
+    <string name="etiqueta_diagnostico">De acuerdo con éste valor vos sos:</string>
+</resources>
