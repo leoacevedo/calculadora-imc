@@ -1,69 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_altura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="@string/etiqueta_altura" />
+        android:text="@string/etiqueta_altura"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
 
     <EditText
         android:id="@+id/altura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="168"
-        android:inputType="number" />
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_altura"
+        />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_peso"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/etiqueta_peso"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/altura"
+        />
 
     <EditText
         android:id="@+id/peso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="66"
-        android:inputType="number" />
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_peso"
+        />
 
     <Button
         android:id="@+id/calcular"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Calcular"
         android:textAllCaps="false"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/peso"
+        />
 
 
     <TextView
+        android:id="@+id/tv_resultado_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/etiqueta_masa_corporal"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calcular"
+        />
 
     <TextView
         android:id="@+id/imc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_resultado_1"
+        tools:text="23.4"
+        />
 
     <TextView
+        android:id="@+id/tv_resultado_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/etiqueta_diagnostico" />
+        android:text="@string/etiqueta_diagnostico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imc"
+        />
 
     <TextView
         android:id="@+id/diagnostico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_resultado_2"
+        tools:text="Normal"
+        />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
