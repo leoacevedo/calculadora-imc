@@ -57,6 +57,20 @@
         android:textAllCaps="false"
         android:layout_marginBottom="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ir_a_otra_activity"
+        app:layout_constraintTop_toBottomOf="@id/peso"
+        />
+
+    <Button
+        android:id="@+id/ir_a_otra_activity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Otra Activity"
+        android:textAllCaps="false"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@id/calcular"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/peso"
         />
