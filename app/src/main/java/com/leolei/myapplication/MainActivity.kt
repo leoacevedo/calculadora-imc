@@ -5,11 +5,23 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    private val HORA = "____HORA____"
+    private lateinit var hora: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (savedInstanceState == null) {
+            hora = obtenerHora()
+        } else {
+            hora = savedInstanceState.getString(HORA, "")
+        }
+
         setContentView(R.layout.activity_main)
 
         val alturaEt: EditText = findViewById(R.id.altura)
@@ -36,6 +48,21 @@ class MainActivity : AppCompatActivity() {
                 diagnosticoTv.text = diagnostico
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, hora, Toast.LENGTH_LONG).show()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(HORA, hora)
+    }
+
+    private fun obtenerHora(): String {
+        val fecha = Date()
+        return "${fecha.hours} : ${fecha.minutes} : ${fecha.seconds}"
     }
 
     private fun calcularImc(alturaCm: Int, pesoKg: Int): Float {
