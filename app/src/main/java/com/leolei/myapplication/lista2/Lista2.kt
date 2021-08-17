@@ -1,6 +1,7 @@
 package com.leolei.myapplication.lista2
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -39,7 +40,7 @@ class Lista2 : AppCompatActivity() {
                     }
                 } else {
                     Toast.makeText(this@Lista2, "Hubo un error, despues me fijo", Toast.LENGTH_LONG).show()
-                    // no fue exitosa
+                    Log.e("ERROR", response.errorBody()?.string() ?: "errorBody == null, no se que pasa pero pasa algo")
                 }
             }
 
